@@ -68,7 +68,7 @@
         </p>
       </transition>
     </div>
-     <form @submit.prevent="addTodo " autocomplete="off">
+     <form @submit.prevent="isEditMode ? editHandler : addTodo " autocomplete="off">
       <div
         class="
           mt-12
@@ -158,7 +158,7 @@
 </template>
 
 <script setup lang="ts">
-import func from "~~/vue-temp/vue-editor-bridge";
+
 
 enum radioType {
   BUSINESS = "Business",
@@ -174,21 +174,7 @@ enum radioType {
 // category.value=event.target.value
 // }
 
-const isEditMode = ref(false);
-const i = ref(null);
 
-const editHandler = (index:number)=>{
-  console.log('hello')
-  isEditMode.value = true;
-   i.value = index;
-  todoName.value = totalSort[i].name;
-  console.log(totalSort[i].name)
-  console.log(todoName.value)
-
-  category.value=totalSort[i].todoCategory
- 
-  console.log(index)
-}
 
 
 interface typetodo {
@@ -199,6 +185,18 @@ const totalTodo = ref<typetodo[]>([]);
 const todoName = ref<string>('');
 const category = ref<radioType>(null);
 const checkBlank = ref<boolean>(false);
+
+const isEditMode = ref<boolean>(false);
+const i = ref(null);
+
+const editHandler = (index:number,items)=>{
+    isEditMode.value=true
+ i.value=index
+
+ todoName.value=items.name
+ category.value=items.todoCategory
+console.log(index,items)
+ }
 
 const addTodo = () => {
   // if (todoName.value.trim() === "" || category.value === null) {

@@ -16,7 +16,7 @@
           <td>{{ items.todoCategory }}</td>
           <td>
             <button @click="remove(items,index)">Delete</button>/
-            <button @click="emit('edit',index)">Edit</button>
+            <button @click="emit('edit',index,items)">Edit</button>
           </td>
         </tr>
       </tbody>
