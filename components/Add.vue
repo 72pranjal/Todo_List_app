@@ -68,7 +68,7 @@
         </p>
       </transition>
     </div>
-     <form @submit.prevent="isEditMode ? editHandler : addTodo " autocomplete="off">
+    <form onsubmit="event.preventDefault()" autocomplete="off">
       <div
         class="
           mt-12
@@ -122,8 +122,8 @@
               type="radio"
               id="p"
               name="category"
-             v-model="category"
-             value="Personal"
+              v-model="category"
+              value="Personal"
             />
           </div>
         </div>
@@ -141,67 +141,80 @@
             items-center
           "
         >
-          <button class="text-center p-2">Add Items</button>
+          <button class="text-center p-2" @click="Submitdata">Add Items</button>
         </div>
       </div>
       <teleport to="body">
         <div v-if="checkBlank" class="modal">
           <p>please Choose name of your todo</p>
           <p>and category</p>
-          <button @click="checkBlank = false">Close</button>
+          <button
+            class="bg-red-400 text-white w-24 hover:scale-110 p-1 rounded-md"
+            @click="checkBlank = false"
+          >
+            Close
+          </button>
         </div>
       </teleport>
     </form>
-     <AddChild :totaldata="totalSort" @edit="editHandler" />
+    <div class="text-center mt-9">
+      <p class="text-4xl bg-gray-300 text-rose-600 animate-bounce">
+        ===Total Added Items===
+      </p>
+    </div>
+    <AddChild :totaldata="totalTodo" @edit="editHandler" />
   </div>
- 
 </template>
 
 <script setup lang="ts">
-
+const dataIndex = ref(null);
+function Submitdata() {
+  if (dataIndex.value === null) {
+    addTodo();
+  } else {
+    update();
+    // alert("hi");
+    dataIndex.value = null;
+  }
+}
 
 enum radioType {
   BUSINESS = "Business",
   PERSONAL = "Personal",
 }
-
-// const nameHandler = (event) => {
-//   todoName.value = event.target.value;
-  
-//   console.log(todoName.value);
-// }
-// const categoryHandeler=(event)=>{
-// category.value=event.target.value
-// }
-
-
-
-
 interface typetodo {
   name: string;
   todoCategory: radioType;
 }
 const totalTodo = ref<typetodo[]>([]);
-const todoName = ref<string>('');
+const todoName = ref<string>("");
 const category = ref<radioType>(null);
 const checkBlank = ref<boolean>(false);
 
-const isEditMode = ref<boolean>(false);
-const i = ref(null);
+const editHandler = (index: number) => {
+  dataIndex.value = index;
+  todoName.value = totalTodo.value[dataIndex.value].name;
+  category.value = totalTodo.value[dataIndex.value].todoCategory;
+};
 
-const editHandler = (index:number,items)=>{
-    isEditMode.value=true
- i.value=index
-
- todoName.value=items.name
- category.value=items.todoCategory
-console.log(index,items)
- }
+watch(
+  () => totalTodo.value,
+  (newVal) => {
+    alert("#changed");
+  },
+  {deep:true}
+);
+const update = () => {
+  totalTodo.value[dataIndex.value].name = todoName.value;
+  totalTodo.value[dataIndex.value].todoCategory = category.value;
+  todoName.value = "";
+  category.value = null;
+};
 
 const addTodo = () => {
-  // if (todoName.value.trim() === "" || category.value === null) {
-  //   return (checkBlank.value = true);
-  // }
+  if (todoName.value.trim() === "" || category.value === null) {
+    return (checkBlank.value = true);
+  }
   totalTodo.value.push({
     name: todoName.value,
     todoCategory: category.value,
@@ -210,22 +223,17 @@ const addTodo = () => {
   category.value = null;
   console.log(totalTodo.value);
 };
-watch(totalTodo,(newVal)=>{
-  localStorage.setItem("totalTodo",JSON.stringify(newVal));
-},
-{deep:true}
+watch(
+  totalTodo,
+  (newVal) => {
+    localStorage.setItem("totalTodo", JSON.stringify(newVal));
+  },
+  { deep: true }
 );
 
-onMounted(()=>{
-  totalTodo.value=JSON.parse(localStorage.getItem('totalTodo')) ||[];
-})
-
-const totalSort = computed(() =>
-  totalTodo.value.sort((a, b) => {
-    return a.name.localeCompare(b.name);
-  })
-);
-console.log(totalSort.value)
+onMounted(() => {
+  totalTodo.value = JSON.parse(localStorage.getItem("totalTodo")) || [];
+});
 const line1Show = ref(false);
 onMounted(() => {
   setTimeout(() => {
@@ -276,8 +284,10 @@ onMounted(() => {
   left: 50%;
   width: 300px;
   margin-left: -150px;
-  background-color: red;
-  color: white;
+  height: 170px;
+  padding: 15px;
+  background-color: lightgreen;
+  color: red;
   font-weight: 800;
   text-align: center;
   font-size: 20px;
