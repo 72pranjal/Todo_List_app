@@ -95,6 +95,7 @@
               bg-orange-100
               my-4
               rounded-md
+              
             "
             type="text"
             id="name"
@@ -129,19 +130,10 @@
         </div>
         <div
           class="
-            mb-10
-            mt-16
-            rounded-xl
-            cursor-pointer
-            hover:bg-blue-400
-            bg-orange-100
-            h-10
-            w-2/4
-            mx-auto
-            items-center
+            mb-12
           "
         >
-          <button class="text-center p-2" @click="Submitdata">Add Items</button>
+          <button class=" bg-green-400 text-red-600 hover:scale-90 hover:bg-zinc-50 duration-500 h-10 w-3/5 rounded-xl  " @click="Submitdata">Add Items</button>
         </div>
       </div>
       <teleport to="body">
@@ -168,7 +160,7 @@
 
 <script setup lang="ts">
 const dataIndex = ref(null);
-function Submitdata() {
+const Submitdata=()=>{
   if (dataIndex.value === null) {
     addTodo();
   } else {
@@ -191,7 +183,7 @@ const todoName = ref<string>("");
 const category = ref<radioType>(null);
 const checkBlank = ref<boolean>(false);
 
-const editHandler = (index: number) => {
+const editHandler = (index:number) => {
   dataIndex.value = index;
   todoName.value = totalTodo.value[dataIndex.value].name;
   category.value = totalTodo.value[dataIndex.value].todoCategory;
@@ -218,6 +210,7 @@ const addTodo = () => {
   totalTodo.value.push({
     name: todoName.value,
     todoCategory: category.value,
+    
   });
   todoName.value = "";
   category.value = null;
@@ -245,7 +238,7 @@ const line2Show = ref(false);
 onMounted(() => {
   setTimeout(() => {
     line2Show.value = true;
-  }, 1500);
+  }, 1000);
 });
 
 const line3Show = ref(false);

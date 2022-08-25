@@ -10,14 +10,14 @@
         </tr>
       </thead>
      
-      <tbody class="">
-        <tr  v-for="(items, index) in props.totaldata" :key="index">
+      <tbody>
+        <tr  v-for="(items, index) in props.totaldata" :key="index" class="">
           <td class="border-2 p-2 border-zinc-300">{{ index + 1 }}</td>
-          <td class="border-2 border-zinc-300">{{ items.name }}</td>
+          <td class="border-2  border-zinc-300">{{ items.name }}</td>
           <td class="border-2 border-zinc-300">{{ items.todoCategory }}</td>
           <td  class="border-2  border-zinc-300">
-            <button class="bg-red-400 text-white w-20 hover:scale-110 p-1 rounded-md" @click="remove(index)">Delete</button> /  
-            <button class="bg-green-400 hover:scale-110 duration-500 text-zinc-500 w-20 p-1 rounded-md" @click="emit('edit',index)">Edit</button>
+            <button class="bg-red-400 text-white w-20 hover:scale-110 duration-150 p-1 rounded-md" @click="remove(index)">Delete</button> /  
+            <button class="bg-green-400 hover:scale-110 duration-300 text-zinc-500 w-20 p-1 rounded-md" @click="emit('edit',index)">Edit</button>
           </td>
         </tr>
       </tbody>
