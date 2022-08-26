@@ -189,14 +189,17 @@ const editHandler = (index:number) => {
   category.value = totalTodo.value[dataIndex.value].todoCategory;
 };
 
-watch(
-  () => totalTodo.value,
-  (newVal) => {
-    alert("#changed");
-  },
-  {deep:true}
-);
+// watch(
+//   () => totalTodo.value,
+//   (newVal) => {
+//     alert("#changed");
+//   },
+//   {deep:true}
+// );
 const update = () => {
+  if (todoName.value.trim() === "" || category.value === null) {
+    return (checkBlank.value = true);
+  }
   totalTodo.value[dataIndex.value].name = todoName.value;
   totalTodo.value[dataIndex.value].todoCategory = category.value;
   todoName.value = "";
