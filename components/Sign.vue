@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="mb-6">
 
  <transition name="bounce">
 
@@ -68,7 +68,7 @@
           <input type="radio" value="female" name="gender" v-model="userGender" id="female" />
           </div>
           <div class="mx-6">
-            <label for="unisex">Unisex</label>
+            <label for="unisex">Other</label>
           <input type="radio" value="unisex" name="gender" v-model="userGender" id="unisex" />
           </div>
         </div>
@@ -88,7 +88,7 @@
 enum typeGender{
   MALE='Male',
   FEMALE='Female',
-  UNISEX='Unisex'
+  OTHER='Other'
 }
 interface userType{
   name:string,

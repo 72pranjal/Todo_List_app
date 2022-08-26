@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-full ml-1 bg-white">
+  <div class="h-full w-full  bg-slate-50">
 
     <div class="text-center my-20">
       <transition name="slide-fade" :duration="{ enter: 500, leave: 500 }">
@@ -100,22 +100,6 @@
       </div>
       </div>
     </div>
-    <div  class=" bg-purple-200 h-52  mt-">
-  <footer>
-    <div class="pt-4">
-      <img class="h-14 mx-auto " src="@/assets/facebook.jpg" alt="">
-    </div>
-    <div class=" text-center text-gray-600 pt-4">
-      <P>Info Support Marketing  </P>
-      <p>
-        Terms of Uses Privacy Policy
-      </p>
-      <p>
-        2022 memory@
-      </p>
-    </div>
-  </footer>
-</div>
   </div>
 
 </template>

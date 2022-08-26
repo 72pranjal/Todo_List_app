@@ -1,3 +1,3 @@
 <template>
-     <nav-bar />
+<Knowledge />
 </template>
