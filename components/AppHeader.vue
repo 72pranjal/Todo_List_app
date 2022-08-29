@@ -15,7 +15,7 @@
                 <a class="flex grid-flow-row text-sm items-center h-full py-2.5 ml-16  hover:text-amber-500  text-fuchsia-700" href="/addItems">Add Items</a>
               </li>
                <li class="h-full  ">
-                <a class="flex text-sm items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" href="/totalItems">Total Added Items</a>
+                <a class="flex text-sm items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" href="/totalItems">WebShows</a>
               </li>
                <div class="flex text-sm items-center h-full ml-96">
                 <li class=" ">

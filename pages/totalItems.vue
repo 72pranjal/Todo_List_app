@@ -1,3 +1,5 @@
 <template>
-<Knowledge />
+<div>
+    <Knowledge />
+</div>
 </template>

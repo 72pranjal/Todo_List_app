@@ -1,4 +1,6 @@
 <template>
 
-     <Add />
+  <div>
+        <Add />
+  </div>
 </template>

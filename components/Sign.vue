@@ -61,15 +61,15 @@
         <div class="py-2 flex">
           <div class="ml-8">
             <label for="male">Male</label>
-          <input type="radio" value="male" name="gender" v-model="userGender" id="male" />
+          <input type="radio" value="male" name="gender"  v-model="userGender1" id="male" />
           </div>
           <div class="ml-6 text-x  focus:text-orange-400">
             <label for="female">Female</label>
-          <input type="radio" value="female" name="gender" v-model="userGender" id="female" />
+          <input type="radio" value="female" name="gender" v-model="userGender1" id="female" />
           </div>
           <div class="mx-6">
             <label for="unisex">Other</label>
-          <input type="radio" value="unisex" name="gender" v-model="userGender" id="unisex" />
+          <input type="radio" value="unisex" name="gender" v-model="userGender1" id="unisex" />
           </div>
         </div>
        
@@ -102,7 +102,7 @@ const userName=ref<string>('')
 const userEmail=ref<string>('')
 const userPassword=ref<string>('')
 const userCnf=ref<string>('')
-const userGender=ref<typeGender>(null)
+const userGender1=ref<typeGender>(null)
 const notEqual=ref<boolean>(false)
 
 const check=()=>{

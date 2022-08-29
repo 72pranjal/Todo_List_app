@@ -1,3 +1,5 @@
 <template>
-    <Sign />
+  <div>
+      <Sign />
+  </div>
 </template>
