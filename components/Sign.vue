@@ -6,7 +6,7 @@
 <div  v-if="showdataaa">
    <div>
     <img
-      class="h-16 mx-auto mt-20 hover:bg-amber-200"
+      class="h-16 mx-auto mt-8 hover:bg-amber-200"
       src="@/assets/picture.jpg"
       alt=""
     />
@@ -27,6 +27,17 @@
   >
     <div class="py-4">
       <form onsubmit="event.preventDefault()" autocomplete="off">
+        <teleport to="body">
+        <div v-if="emptyField"  class="modal">
+          <p class="mt-8">All fields are mendatry</p>
+          <button
+            class="bg-red-400 mt-5 text-white duration-500  text-xs h-8 w-16 hover:scale-110 p-1 rounded-md"
+            @click="emptyField = false"
+          >
+            Close
+          </button>
+        </div>
+      </teleport>
         <div class="py-2">
           <label for="name" class="text-x mr-60 ">FullName::</label><br>
           <input class="rounded-md focus:bg-red-200 text-sm  h-6 w-80 p-2 border-none" type="text" v-model="userName" placeholder="enter your name" id="name" />
@@ -44,7 +55,12 @@
         </div>
         <div class="py-2">
           <label for="Pwd" class="text-x mr-60 ">Password::</label><br>
-          <input :type="isChecked ? 'text':'password'" v-model="userPassword" class="rounded-md focus:bg-red-200 text-sm p-2  h-6 w-80 " placeholder="enter your password" id="pwd" />
+          <input :type="isChecked ? 'text':'password'" @blur="Plength" v-model="userPassword" class="rounded-md focus:bg-red-200 text-sm p-2  h-6 w-80 " placeholder="enter your password" id="pwd" />
+        </div>
+        <div class="bg-red-400 w-5/6 text-center ml-7 animate-pulse p-1 mb-4 text-neutral-200" v-if="checkLenght">
+             <p>
+              password length must be 6 character
+             </p>
         </div>
 
         <div class="py-2">
@@ -74,7 +90,7 @@
         </div>
        
         <div class="py-2">
-          <button class="bg-sky-600 h-10 w-28  hover:scale-110 duration-300 p-2 text-white hover:bg-red-400 rounded-md ">Sign Up</button>
+          <button @click="signUpUser" class="bg-sky-600 h-10 w-24  hover:scale-110 duration-300 p-2 text-white hover:bg-red-400 rounded-md ">Sign Up</button>
         </div>
       </form>
     </div>
@@ -96,6 +112,8 @@ interface userType{
   password:string,
   gender:typeGender
 }
+
+
 const userData=ref<userType[]>([])
 
 const userName=ref<string>('')
@@ -104,6 +122,37 @@ const userPassword=ref<string>('')
 const userCnf=ref<string>('')
 const userGender1=ref<typeGender>(null)
 const notEqual=ref<boolean>(false)
+  const checkLenght=ref(false)
+  const ragister=ref('')
+  const emptyField=ref(false)
+
+  const signUpUser= async ()=>{
+    
+    if(userName.value.trim()==='' || userEmail.value.trim()===''
+    || userPassword.value.trim()==='' || userCnf.value.trim()===''
+    || userGender1.value===null
+     ){
+      return  emptyField.value=true
+    }
+  const data= await createUser(userEmail.value,userPassword.value)
+
+  // alert('heelo callled')
+  if(data){
+   ragister.value=`Sucessfully registered: ${data.user.email}`
+  //  setTimeout(() => {
+  //   ragister.value=''
+  //  },3000);
+}
+
+  userCnf.value=''
+  userEmail.value=''
+  userPassword.value=''
+  userGender1.value=""
+  userName.value=''
+
+}
+
+
 
 const check=()=>{
   if(userPassword.value != userCnf.value)
@@ -112,6 +161,14 @@ const check=()=>{
   }
   else{
     notEqual.value=false
+  }
+}
+const Plength=()=>{
+  if(userPassword.value.length<6){
+       checkLenght.value=true
+  }
+  else{
+     checkLenght.value=false
   }
 }
 const isChecked=ref<boolean>(false)
