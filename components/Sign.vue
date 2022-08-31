@@ -1,4 +1,8 @@
 <template>
+ <div class="bg-[url('/assets/seen16.jpg')] h-screen">
+  <div class="ml-10">
+    <p class="text-4xl text-white">If you are already logged in</p>
+  </div>
 <div class="mb-6">
 
  <transition name="bounce">
@@ -6,18 +10,19 @@
 <div  v-if="showdataaa">
    <div>
     <img
-      class="h-16 mx-auto mt-8 hover:bg-amber-200"
+      class="h-20 mx-auto mt-14 hover:bg-amber-200"
       src="@/assets/picture.jpg"
       alt=""
     />
   </div>
   <div
     class="text-center bg-indigo-300
-      border-b
+      border
       bg-clip-border
       border-t
       h-auto
-      <!-- w-96 -->
+    
+      w-2/6
       mx-auto
          grid
          grid-flow-row
@@ -25,7 +30,7 @@
      
     "
   >
-    <div class="py-4">
+    <div class="py-10 ">
       <form onsubmit="event.preventDefault()" autocomplete="off">
         <teleport to="body">
         <div v-if="emptyField"  class="modal">
@@ -38,24 +43,24 @@
           </button>
         </div>
       </teleport>
-        <div class="py-2">
-          <label for="name" class="text-x mr-60 ">FullName::</label><br>
-          <input class="rounded-md focus:bg-red-200 text-sm  h-6 w-80 p-2 border-none" type="text" v-model="userName" placeholder="enter your name" id="name" />
+        <div class="py-4">
+          <label for="name" class="text-2xl float-left ml-16 ">FullName::</label><br>
+          <input class="rounded-md focus:bg-red-200 text-xl  h-10 w-4/5 p-4 border-none" type="text" v-model="userName" placeholder="enter your name" id="name" />
         </div>
         <div class="py-2">
-          <label for="email" class="text-x mr-64">Email::</label><br>
+          <label for="email" class="text-2xl float-left ml-16">Email::</label><br>
           <input
             
             type="text"
              v-model="userEmail"
-            class="rounded-md focus:bg-red-200 h-6 w-80 p-2 text-sm "
+            class="rounded-md focus:bg-red-200 h-10 w-4/5 p-4 text-xl "
             placeholder="enter your email"
             id="email"
           />
         </div>
         <div class="py-2">
-          <label for="Pwd" class="text-x mr-60 ">Password::</label><br>
-          <input :type="isChecked ? 'text':'password'" @blur="Plength" v-model="userPassword" class="rounded-md focus:bg-red-200 text-sm p-2  h-6 w-80 " placeholder="enter your password" id="pwd" />
+          <label for="Pwd" class="text-2xl float-left ml-16 ">Password::</label><br>
+          <input :type="isChecked ? 'text':'password'" @blur="Plength" v-model="userPassword" class="rounded-md focus:bg-red-200 text-xl p-4 h-10 w-4/5 " placeholder="enter your password" id="pwd" />
         </div>
         <div class="bg-red-400 w-5/6 text-center ml-7 animate-pulse p-1 mb-4 text-neutral-200" v-if="checkLenght">
              <p>
@@ -63,34 +68,34 @@
              </p>
         </div>
 
-        <div class="py-2">
-          <label for="cpwd" class="text-x mr-44">Conform Password::</label><br>
-          <input :type="isChecked ? 'text': 'password'" @blur="check" v-model="userCnf"  class="rounded-md focus:bg-red-200 p-2 h-6 w-80 text-sm" placeholder="conform password" id="cpwd" />
+        <div class="py-3">
+          <label for="cpwd" class="text-2xl float-left ml-16">Conform Password::</label><br>
+          <input :type="isChecked ? 'text': 'password'" @blur="check" v-model="userCnf"  class="rounded-md focus:bg-red-200 p-4 h-10 w-4/5 text-xl" placeholder="conform password" id="cpwd" />
         </div>
          <div v-if="notEqual" class="bg-red-400 w-5/6 text-center ml-7 animate-pulse p-1 mb-4 text-neutral-200">
              <p>Password and Conform Password does not matched </p>
         </div>
-        <div class="ml-48">
-          <input type="checkbox" id="show" class="" v-model="isChecked" />
-          <label for="show" class="text-x px-2  h-6">Show Password</label>
+        <div class="ml-60  my-4">
+          <input class=" h-4 w-10" type="checkbox" id="show" v-model="isChecked" />
+          <label for="show" class="text-2xl px-2  h-6">Show Password</label>
         </div>
-        <div class="py-2 flex">
-          <div class="ml-8">
+        <div class="py-4 ml-10  flex">
+          <div class="ml-8 text-2xl">
             <label for="male">Male</label>
-          <input type="radio" value="male" name="gender"  v-model="userGender1" id="male" />
+          <input type="radio" class="" value="male" name="gender"  v-model="userGender1" id="male" />
           </div>
-          <div class="ml-6 text-x  focus:text-orange-400">
+          <div class="ml-6 text-2xl  focus:text-orange-400">
             <label for="female">Female</label>
           <input type="radio" value="female" name="gender" v-model="userGender1" id="female" />
           </div>
-          <div class="mx-6">
+          <div class="mx-6 text-2xl">
             <label for="unisex">Other</label>
           <input type="radio" value="unisex" name="gender" v-model="userGender1" id="unisex" />
           </div>
         </div>
        
         <div class="py-2">
-          <button @click="signUpUser" class="bg-sky-600 h-10 w-24  hover:scale-110 duration-300 p-2 text-white hover:bg-red-400 rounded-md ">Sign Up</button>
+          <button @click="signUpUser" class="bg-blue-400 h-14 w-36 text-2xl  hover:scale-110 duration-300 p-2 text-black hover:text-white hover:bg-blue-600 rounded-md ">Sign Up</button>
         </div>
       </form>
     </div>
@@ -98,6 +103,7 @@
  </div>
  </transition>
 </div>
+ </div>
 </template>
 
 <script setup lang="ts">

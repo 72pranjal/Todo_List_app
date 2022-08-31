@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-zinc-300">
+  <div class="bg-gradient-to-r from-green-100 to-green-500">
     <div class="pt-20">
       <transition name="slide-fade">
         <p
           v-if="line1Show"
           class="
-            text-4xl
+            text-5xl
             ml-24
             p-4
             cursor-pointer
@@ -23,7 +23,7 @@
         <p
           v-if="line2Show"
           class="
-            text-4xl
+            text-5xl
             ml-44
             cursor-pointer
             hover:scale-105
@@ -39,7 +39,7 @@
         <p
           v-if="line3Show"
           class="
-            text-4xl
+            text-5xl
             ml-64
             cursor-pointer
             hover:scale-105
@@ -56,7 +56,7 @@
         <p
           v-if="line4Show"
           class="
-            text-4xl
+            text-5xl
             hover:text-pink-800 hover:scale-105
             duration-1000
             cursor-pointer
@@ -79,10 +79,11 @@
           rounded-2xl
           border-8
           mx-auto
+        
         "
       >
-        <div class="p-6">
-          <label class="text-2xl mr-56 text-neutral-300" for="name"
+        <div class="p-10">
+          <label class="text-3xl float-left ml-28 text-neutral-300" for="name"
             >Your Item Name...</label
           ><br />
           <input
@@ -103,11 +104,11 @@
             v-model="todoName"
           />
         </div>
-        <div class="text-2xl text-neutral-300">
+        <div class="text-3xl lg:text-4xl  text-neutral-300">
           <p>Choose Category of Your Item</p>
         </div>
-        <div class="flex my-10 mx-auto">
-          <div class="bg-orange-100 h-28 ml-24 rounded-2xl p-12 items-center">
+        <div class="flex my-16">
+          <div class="bg-orange-100 h-28  ml-52 mr-auto  rounded-2xl p-12 items-center">
             <label class="text-x" for="b">Business</label>
             <input
               type="radio"
@@ -117,7 +118,7 @@
               value="Business"
             />
           </div>
-          <div class="bg-orange-100 h-28 ml-16 rounded-2xl p-12">
+          <div class="bg-orange-100 h-28 mr-44 ml-auto rounded-2xl p-12">
             <label for="p">Personal</label>
             <input
               type="radio"
@@ -133,7 +134,7 @@
             mb-12
           "
         >
-          <button class=" bg-green-400 text-red-600 hover:scale-90 hover:bg-zinc-50 duration-500 h-10 w-3/5 rounded-xl  " @click="Submitdata">Add Items</button>
+          <button class=" bg-green-400 text-red-600 hover:scale-90 hover:bg-zinc-50 duration-500 h-12 w-3/5 rounded-xl  " @click="Submitdata">Add Items</button>
         </div>
       </div>
       <teleport to="body">

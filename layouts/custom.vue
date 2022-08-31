@@ -2,13 +2,13 @@
   <div>
    
 
-    <div class="flex mt-8">
+    <div class="flex p-5 border-b-8 bg-gradient-to-r from-cyan-400 to-blue-500  ">
         
         <div >
-            <NuxtLink class="  text-blue-500 ml-14 text-xl " to="/signIn">GoTo SignIn Page</NuxtLink>
+            <NuxtLink class="  text-white hover:text-orange-300 ml-24 text-3xl " to="/signIn">GoTo SignIn Page</NuxtLink>
         </div>
         <div >
-            <NuxtLink class="  text-blue-500 pl-96 ml-96 text-xl"  to="/signUp">GoTo SignUp Page</NuxtLink>
+            <NuxtLink class="  text-white  hover:text-orange-300 ml-96 pl-80  text-3xl"  to="/">GoTo SignUp Page</NuxtLink>
         </div>
     </div>
     <slot />

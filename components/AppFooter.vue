@@ -1,7 +1,7 @@
 <template>
-     <div  class=" bg-purple-100 h-52  m-auto">
+     <div  class=" bg-purple-300 h-72  m-auto">
   <footer>
-    <div class="pt-4">
+    <div class="pt-14">
       <img class="h-14 mx-auto " src="@/assets/facebook.jpg" alt="">
     </div>
     <div class=" text-center text-gray-600 pt-4">

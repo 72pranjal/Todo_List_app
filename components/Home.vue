@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full w-full  bg-slate-50">
+  <div class="h-full w-full bg-gradient-to-r from-pink-50 to-pink-300">
 
-    <div class="text-center my-20">
+    <div class="text-center pt-32">
       <transition name="slide-fade" :duration="{ enter: 500, leave: 500 }">
         <p class="text-5xl p-2 text-yellow-500" v-if="show">
           ---Welcome My Todo_List App---
@@ -16,51 +16,49 @@
           <p class="text-3xl  hover:text-clip animate-pulse">THIS IS MY TODO LIST</p>
         </div>
       </div>
-      <div class="flex  pl-28 pt-10 items-center cursor-pointer hover:scale-75 duration-1000 ">
-        <transition name="slide-fade" :duration="{ enter: 500, leave: 500 }">
-          <div v-if="show" >
-          <img src="@/assets/fifh.jpg" alt="" />
-           <p>You  can build your todolist</p>
+      <div class="flex  my-16 mx-96  md:my-20 lg:my-24">
+          <div class="pr-7 md:pr-9  duration-500 hover:scale-110 " >
+          <img class="h-5/6 md:h-5/6 " src="@/assets/fifh.jpg" alt="" />
+           <p class="text-2xl md:text-3xl lg:text-3xl">You  can build your todolist</p>
         </div>
-        </transition>
-        <div class="w-96">
-          <img src="@/assets/second.jpeg" alt="" />
+        <div class="duration-500 hover:scale-110 ">
+          <img  class=" h-5/6  w-full" src="@/assets/second.jpeg" alt="" />
         </div>
       </div>
      
-      <div class="flex pl-28  pt-10 items-center cursor-pointer hover:scale-75 duration-1000">
-        <div class=" ">
-          <img src="@/assets/eaight.jpg" alt="" />
+      <div class="flex   mx-96 ">
+        <div class="pr-7 md:pr-9  duration-500 hover:scale-110 ">
+          <img class="h-5/6 md:h-5/6" src="@/assets/eaight.jpg" alt="" />
          
         </div>
-        <div class="w-96">
-           <img src="@/assets/fifh.jpg" alt="" />
+        <div class="duration-500 hover:scale-110">
+           <img class=" h-5/6 w-full" src="@/assets/fifh.jpg" alt="" />
 
         </div>
       </div>
 
-      <div class="flex pl-28  pt-10  items-center cursor-pointer hover:scale-75 duration-1000 ">
-        <div class=" ">
-          <img src="@/assets/seven.jpg" alt="" />
+      <div class="flex  my-16 mx-96  md:my-20 lg:my-24">
+        <div class="pr-7 md:pr-9  duration-500 hover:scale-110 ">
+          <img class="h-5/6 md:h-5/6" src="@/assets/seven.jpg" alt="" />
         </div>
-        <div class="w-96">
-          <img src="@/assets/six.jpg" alt="" />
+        <div class="duration-500 hover:scale-110">
+          <img class=" h-5/6 w-full" src="@/assets/six.jpg" alt="" />
 
         </div>
       </div>
-       <div class="flex pl-28 pt-10 items-center cursor-pointer hover:scale-75 duration-1000">
-        <div class="   ">
-          <img src="@/assets/third.jpeg" alt="" />
+       <div class="flex  my-16 mx-96  md:my-20 lg:my-24">
+        <div class="pr-7 duration-500 hover:scale-110 md:pr-9  ">
+          <img class="h-5/6 md:h-5/6" src="@/assets/third.jpeg" alt="" />
         </div>
-        <div class="w-96 ">
-          <img src="@/assets/first.jpg" alt="" />
+        <div class="duration-500 hover:scale-110">
+          <img class=" h-5/6 w-full" src="@/assets/first.jpg" alt="" />
 
         </div>
       </div>
 
-      <div class="flex">
+      <div class="flex h-96 pb-11">
         <div
-        class="h-full px-10 mt-12  text-gray-600 border-none text-xl bg-pink-300 hover:bg-orange-300"
+        class="h p-10  px-10 mt-12  text-gray-600 border-none text-2xl bg-pink-300 hover:bg-orange-300"
       >
         <p class="p-2">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eum
@@ -76,7 +74,8 @@
           text-orange-600
           mt-12
           border-none
-          text-xl
+          text-2xl
+          p-10
           bg-pink-100
           hover:bg-blue-300
         "
@@ -89,7 +88,7 @@
         </p>
       </div>
       <div
-        class="h-full px-10 text-gray-700 mt-12 border-none text-xl bg-pink-400 hover:bg-slate-100"
+        class="h-full px-10 text-gray-700 mt-12 border-none text-2xl bg-pink-400 hover:bg-slate-100"
       >
         <p class="p-2">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque eum
@@ -116,7 +115,7 @@ onMounted(() => {
 </script>
 
 <style>
-.slide-fade-enter-active {
+/* .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
 
@@ -128,5 +127,5 @@ onMounted(() => {
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
-}
+} */
 </style>

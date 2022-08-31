@@ -2,8 +2,8 @@
 <div class="bg-orange-200">
     <div>
     <NuxtLink to="/totalItems">
-      <div class="text-center">
-        <button class="mt-20 bg-green-400 h-10 w-20 p-2 rounded-md hover:bg-blue-600 hover:text-white duration-300 hover:scale-110 ">Back</button>
+      <div class="text-center pt-28">
+        <button class="mt-20 bg-green-400 h-14 w-28 p-2 rounded-md hover:bg-blue-600 hover:text-white duration-300 hover:scale-110 ">Back</button>
       </div>
     </NuxtLink>
     <h3 class="mt-9  text-center  text-3xl text-orange-500">List Of Episodes</h3>
