@@ -109,11 +109,20 @@ const Pforget= ()=>{
 const signIn = () => {
   authorty.value=true
   const data = signInUser(email.value, password.value);
+  // if(data) {
+  //   return alert('Osm You Logged in')
+  // }
+  // else{
+  //   return alert('please check your email and password')
+  // }
 
   (email.value = ""), (password.value = "");
   // alert("helooo");
  
 };
+// onUpdated(signIn,()=>{
+//   navigateTo('/totalItems')
+// })
 
 const signOut = async () => {
   userdata.value = await signOutUser();

@@ -9,22 +9,22 @@
            <nav  class="h-full gird grid-cols-5 ">
             <ul class=" flex h-full p-0 m-0 list-none ml-16  ">
               <li class="h-full   ">
-                <a class="flex text-xl items-center h-full py-2.5 hover:text-amber-500 text-fuchsia-700 ml-16" href="/homePage">Home</a>
+                <NuxtLink class="flex text-xl items-center h-full py-2.5 hover:text-amber-500 text-fuchsia-700 ml-16" to="/homePage">Home</NuxtLink>
               </li>
                <li class="h-full ml-16  ">
-                <a class="flex grid-flow-row text-xl items-center h-full py-2.5 ml-16  hover:text-amber-500  text-fuchsia-700" href="/addItems">Add Items</a>
+                <NuxtLink class="flex grid-flow-row text-xl items-center h-full py-2.5 ml-16  hover:text-amber-500  text-fuchsia-700" to="/addItems">Add Items</NuxtLink>
               </li>
                <li class="h-full ml-16  ">
-                <a class="flex text-xl items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" href="/totalItems">WebShows</a>
+                <NuxtLink class="flex text-xl items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" to="/totalItems">WebShows</NuxtLink>>
               </li>
                <div class="flex text-xl float-right items-center h-full ml-">
                
                </div>
                <li class=" float-none h-full text-xl pt-6 ml-96 pl-32  ">
-                <a  class="   hover:text-amber-500 text-fuchsia-700" href="/signIn">Sign In /</a>
+                <NuxtLink class="   hover:text-amber-500 text-fuchsia-700" to="/signIn">Sign In /</NuxtLink>>
               </li>
                <li class="h-full text-xl pt-6">
-                <a class=" float-right   text-fuchsia-700  hover:text-amber-500" href="/">Sign Up</a>
+                <NuxtLink class=" float-right   text-fuchsia-700  hover:text-amber-500" to="/">Sign Up</NuxtLink>
               </li>
             </ul>
            </nav>
