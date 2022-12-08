@@ -153,7 +153,7 @@ const notEqual=ref<boolean>(false)
   userCnf.value=''
   userEmail.value=''
   userPassword.value=''
-  userGender1.value=""
+  userGender1.value=''
   userName.value=''
 
 }

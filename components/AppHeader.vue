@@ -17,6 +17,9 @@
                <li class="h-full ml-16  ">
                 <NuxtLink class="flex text-xl items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" to="/totalItems">WebShows</NuxtLink>>
               </li>
+              <li class="h-full ml-16  ">
+                <NuxtLink class="flex text-xl items-center h-full py-2.5  ml-16  hover:text-amber-500 text-fuchsia-700" to="/mob">Auth-with-</NuxtLink>>
+              </li>
                <div class="flex text-xl float-right items-center h-full ml-">
                
                </div>

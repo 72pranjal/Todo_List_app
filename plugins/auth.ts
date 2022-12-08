@@ -5,8 +5,8 @@ export default defineNuxtPlugin(() => {
     console.log($auth?.currentUser)
 
 
-    if($auth.currentUser.uid===null){
-      return abortNavigation()
-    }
+    // if($auth.currentUser.uid===null){
+    //   return abortNavigation()
+    // }
     })
   })

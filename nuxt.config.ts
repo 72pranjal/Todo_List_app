@@ -11,15 +11,9 @@ export default defineNuxtConfig({
       apiBase: 'AIzaSyDAzHVfy5b5DvGeRFT4x8T39Kg0AsHhW5s',
     },
   },
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-          
-        },
-      },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
     },
   },
   css: ["@/assets/css/tailwind.css"],
